@@ -1,21 +1,43 @@
 import React from "react"
 import { Link } from "gatsby"
+import ArrowRight from "../images/chevron-right.svg"
+import Hero from "../images/hero.png"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div className="container">
+      <p className="tags">{"<body>"}</p>
+      <div className="body-container">
+        <p className="tags">{"<h1>"}</p>
+        <div className="name-header home-content">
+          <h1>Hi,</h1>
+          <h1>I'm Oluwatobi</h1>
+          <h3>Web & Mobile developer</h3>
+        </div>
+        <p className="tags">{"</h1>"}</p>
+        <img src={Hero} alt="hero-image" className="hero-image" />
+        <p>
+          <span className="tags">{"<p>"}</span>
+          <span className="home-description home-content">
+            I'm a Front End & mobile engineer.
+          </span>
+          <span className="tags">{"</p>"}</span>
+        </p>
+        <p className="btn-container">
+          <span className="tags">{"<button>"}</span>
+          <span className="btn">
+            <span>SEE WHAT I'VE DONE </span>
+            <img src={ArrowRight} alt="arrow-right" className="icon" />
+          </span>
+          <span className="tags">{"</button>"}</span>
+        </p>
+      </div>
+      <p className="tags">{"</body>"}</p>
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
 )
 
