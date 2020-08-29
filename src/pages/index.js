@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import ArrowRight from "../images/chevron-right.svg"
 import Hero from "../images/hero.png"
-
+import { Location } from "@reach/router"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -29,10 +29,12 @@ const IndexPage = () => (
         </p>
         <p className="btn-container">
           <span className="tags">{"<button>"}</span>
-          <span className="btn">
-            <span>SEE WHAT I'VE DONE </span>
-            <img src={ArrowRight} alt="arrow-right" className="icon" />
-          </span>
+          <Link to="/projects" className="projects-link">
+            <span className="btn">
+              <span>SEE WHAT I'VE DONE </span>
+              <img src={ArrowRight} alt="arrow-right" className="icon" />
+            </span>
+          </Link>
           <span className="tags">{"</button>"}</span>
         </p>
       </div>

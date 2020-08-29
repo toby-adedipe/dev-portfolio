@@ -49,20 +49,26 @@ h3 {
   width: 40%;
   right: 1rem;
   top: 30%;
+  display: block;
+  margin: auto;
+}
+.projects-link {
+  margin: 0 5%;
 }
 .btn {
+  width: 100%;
   font-size: 14px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 0 5%;
   position: relative;
   animation-name: run;
   animation-duration: 5s;
   animation-iteration-count: infinite;
 }
 .btn:hover {
+  width: 100%;
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -100,7 +106,9 @@ h3 {
   }
   .hero-image {
     position: static;
+    display: block;
     width: 85%;
+    margin: auto;
   }
 }
 
@@ -122,7 +130,7 @@ h3 {
     font-size: 12px;
   }
   .container {
-    margin-top: 40px;
+    margin-top: 60px;
     margin-left: 0px;
   }
   .body-container {
@@ -139,19 +147,24 @@ h3 {
     height: 22px;
     margin-left: 10px;
   }
+  .projects-link {
+    margin: 0 5%;
+  }
+
   .btn {
+    width: 100%;
     font-size: 14px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 0 5%;
     position: relative;
     animation-name: run;
     animation-duration: 5s;
     animation-iteration-count: infinite;
   }
   .btn:hover {
+    width: 100%;
     cursor: pointer;
     display: flex;
     flex-direction: row;

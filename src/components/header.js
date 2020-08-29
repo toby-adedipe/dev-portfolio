@@ -1,14 +1,8 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
 import "./header.css"
-
-import Home from "../images/home.svg"
-import Projects from "../images/projects.svg"
-import About from "../images/about.svg"
-import LinkedIn from "../images/linkedin.svg"
-import Github from "../images/github.svg"
-import Email from "../images/email.svg"
+import { Location } from "@reach/router"
 
 const HomeSVG = ({ className }) => (
   <svg
@@ -143,41 +137,89 @@ const EmailSVG = ({ className }) => (
   </svg>
 )
 
-const Header = ({ siteTitle }) => (
-  <header>
-    <div className="header-container">
-      <div>
-        <Link to="/">
-          <HomeSVG className={"home-icon"} />
-        </Link>
-        <div></div>
-      </div>
-      <div>
-        <Link to="/projects">
-          <ProjectsSVG />
-        </Link>
-        <div></div>
-      </div>
-      <div>
-        <Link to="/about">
-          <AboutSVG className={"about-icon"} />
-        </Link>
-        <div></div>
-      </div>
-    </div>
-    <div className="external-links">
-      <a href="https://www.linkedin.com/in/oluwatobi-adedipe/">
-        <LinkedInSVG className={"linkedin-icon"} />
-      </a>
-      <a href="https://github.com/toby-adedipe">
-        <GithubSVG className={"github-icon"} />
-      </a>
-      <a href="mailto:adedipe.toby@gmail.com">
-        <EmailSVG className={"email-icon"} />
-      </a>
-    </div>
-  </header>
+const MediumSVG = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    className={className}
+  >
+    <path
+      id="Icon_awesome-medium"
+      data-name="Icon awesome-medium"
+      d="M0,2.25v24H24v-24ZM19.939,7.934,18.654,9.166a.378.378,0,0,0-.145.359v9.07a.369.369,0,0,0,.145.359l1.259,1.232v.273H13.591V20.2l1.3-1.264c.129-.129.129-.166.129-.359V11.239L11.4,20.432h-.488L6.7,11.239V17.4a.847.847,0,0,0,.236.707l1.693,2.052v.273H3.814v-.273l1.693-2.052a.82.82,0,0,0,.22-.707V10.275a.612.612,0,0,0-.2-.525L4.018,7.934V7.661H8.695l3.611,7.929,3.177-7.923h4.457Z"
+      transform="translate(0 -2.25)"
+      fill="#fff"
+    />
+  </svg>
 )
+
+const Header = ({ siteTitle }) => {
+  const [home, setHome] = useState("dot")
+  const [projects, setProjects] = useState("disabled-dot")
+  const [about, setAbout] = useState("disabled-dot")
+
+  const CheckLocation = () => (
+    <Location>
+      {({ location }) => {
+        if (location.pathname === "/") {
+          setHome("dot")
+          setProjects("disabled-dot")
+          setAbout("disabled-dot")
+        } else if (location.pathname === "/projects") {
+          setHome("disabled-dot")
+          setProjects("dot")
+          setAbout("disabled-dot")
+        } else if (location.pathname === "/about") {
+          setHome("disabled-dot")
+          setProjects("disabled-dot")
+          setAbout("dot")
+        }
+      }}
+    </Location>
+  )
+
+  return (
+    <header>
+      <CheckLocation />
+      <div className="header-container">
+        <div className="link-container">
+          <Link to="/">
+            <HomeSVG className={"home-icon"} />
+          </Link>
+          <div className={home}></div>
+        </div>
+        <div className="link-container">
+          <Link to="/projects">
+            <ProjectsSVG />
+          </Link>
+          <div className={projects}></div>
+        </div>
+        <div className="link-container">
+          <Link to="/about">
+            <AboutSVG className={"about-icon"} />
+          </Link>
+          <div className={about}></div>
+        </div>
+      </div>
+      <div className="external-links">
+        <a href="https://www.linkedin.com/in/oluwatobi-adedipe/">
+          <LinkedInSVG className={"linkedin-icon"} />
+        </a>
+        <a href="https://github.com/toby-adedipe">
+          <GithubSVG className={"github-icon"} />
+        </a>
+        <a href="mailto:adedipe.toby@gmail.com">
+          <EmailSVG className={"email-icon"} />
+        </a>
+        <a href="https://medium.com/@toby_adedipe">
+          <MediumSVG className={"medium-icon"} />
+        </a>
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
