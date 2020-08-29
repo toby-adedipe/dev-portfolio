@@ -29,17 +29,6 @@ header {
   justify-content: space-around;
   align-items: center;
 }
-.home-icon,
-.about-icon,
-.projects-icon,
-.linkedin-icon,
-.github-icon,
-.mail-icon {
-  width: 24px;
-}
-.projects-icon {
-  height: 32px;
-}
 
 @media only screen and (max-width: 600px) {
   header {
@@ -57,13 +46,5 @@ header {
   .external-links {
     display: none;
     flex-direction: row;
-  }
-  .home-icon,
-  .about-icon,
-  .projects-icon {
-    width: 24px;
-  }
-  .projects-icon {
-    height: 32px;
   }
 }
