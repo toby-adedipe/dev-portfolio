@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import ArrowRight from "../images/chevron-right.svg"
 import Hero from "../images/hero.png"
-import { Location } from "@reach/router"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -19,7 +18,7 @@ const IndexPage = () => (
           <h3>Web & Mobile developer</h3>
         </div>
         <p className="tags">{"</h1>"}</p>
-        <img src={Hero} alt="hero-image" className="hero-image" />
+        <img src={Hero} alt="hero" className="hero-image" />
         <p>
           <span className="tags">{"<p>"}</span>
           <span className="home-description home-content">
