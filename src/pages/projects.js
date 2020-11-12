@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { projects } from "../data"
+import { navigate } from "gatsby"
 
 const SVG = () => (
   <svg
@@ -40,6 +41,10 @@ const Projects = () => {
 
   useEffect(() => setProjectList(projects), [])
 
+  const handleClick = url => {
+    navigate(`/project${url}`)
+  }
+
   return (
     <Layout>
       <SEO title="Projects" />
@@ -49,11 +54,24 @@ const Projects = () => {
         <div className="projects-list">
           {projectList.map(project => (
             <div className="project-item">
-              <div className="project-image">{project.name}</div>
+              <div
+                className="project-image"
+                onClick={() => handleClick(project.navigate)}
+                onKeyDown={() => handleClick(project.navigate)}
+              >
+                {project.name}
+              </div>
               <p>{project.name}</p>
+              <div className="tool-container">
+                {project.tools.map(tool=>(
+                  <div>
+                    <p className="tools">{tool}</p>
+                  </div>
+                ))}
+              </div>
               {project.link ? (
                 <a href={project.link} className="project-link">
-                  Go to site <SVG />
+                  Visit Website <SVG />
                 </a>
               ) : null}
             </div>

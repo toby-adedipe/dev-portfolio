@@ -167,7 +167,7 @@ const Header = ({ siteTitle }) => {
           setHome("dot")
           setProjects("disabled-dot")
           setAbout("disabled-dot")
-        } else if (location.pathname === "/projects") {
+        } else if (location.pathname.includes("/project")) {
           setHome("disabled-dot")
           setProjects("dot")
           setAbout("disabled-dot")
