@@ -162,16 +162,53 @@ hr {
   margin-bottom: .25rem;
 }
 .tools{
-  font-size: .6rem;
+  font-size: .5rem;
   margin: .25rem;
   color: #8a8a8a;
+}
+.image-container{
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  margin-bottom: .5rem;
+}
+.web-images{
+  width: 400px;
+}
+.mobile-images{
+  width: 200px;
+}
+.download-btn:hover{
+  text-decoration: underline;
+}
+.skills-list{
+  width: 100%;
+}
+.about>p{
+  margin-bottom: 1rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+ul{
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+ul>li{
+  list-style: none;
+  background-color: #ddd;
+  color: #000;
+  display: inline-block;
+  margin: .5rem;
+  padding: .5rem;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width: 800px) {
   .container {
     display: inline-block;
     padding: 1rem;
-    width: 90%;
+    width: 80%;
     margin-left: 70px;
   }
   .hero-image {
@@ -275,5 +312,30 @@ hr {
   .home-content {
     position: relative;
     left: 20;
+  }
+  .image-container{
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    margin-bottom: .5rem;
+  }
+  .web-images{
+    width: 100%;
+  }
+  .mobile-images{
+    width: 100%;
+  }
+  .avatar-div{
+    background-image: url('../images/avatar.jpg');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    width: 200px;
+    height: 200px;
+  }
+  .avatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
   }
 }

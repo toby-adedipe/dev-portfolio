@@ -12,8 +12,10 @@ export const projects = [
       "GCP",
     ],
     description:
-      "I am working on the new Orange botswana mobile application for ios and android Using react native",
-    images: [],
+      "I built the new version of the orange botswana mobile application, using react native for the front end of andriod and ios apps and Google cloud platform to collect and store data",
+    images: [
+      1,2,3,4
+    ],
     link: null,
     navigate: "/orange",
   },
@@ -29,15 +31,6 @@ export const projects = [
   },
   {
     id: 3,
-    name: "Portfolio",
-    tools: ["HTML", "CSS", "React", "Redux", "Adobe XD"],
-    description: "Developed my personal portfolio",
-    images: [],
-    link: "/",
-    navigate: "/portfolio",
-  },
-  {
-    id: 4,
     name: "Night Market",
     tools: ["HTML", "CSS", "React", "Python", "GCP", "Adobe XD"],
     description:
@@ -47,7 +40,7 @@ export const projects = [
     navigate: "/nightmarket",
   },
   {
-    id: 5,
+    id: 4,
     name: "Would You Rather",
     tools: ["HTML", "CSS", "React", "Redux", "Adobe XD"],
     description:
@@ -58,7 +51,7 @@ export const projects = [
   },
 
   {
-    id: 6,
+    id: 5,
     name: "Laibry",
     tools: ["HTML", "CSS", "React", "Adobe XD"],
     description:

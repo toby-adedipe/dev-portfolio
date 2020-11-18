@@ -13,6 +13,14 @@ const BookClub = () => {
       <SEO title="BookClub" />
       <div className="projects-container">
         <h2>{project.name}</h2>
+        <div className="image-container">
+          <img src={require('../../images/bookclub/1.png')} className="web-images" />
+          <img src={require('../../images/bookclub/2.png')} className="web-images" />
+        </div>
+        <div className="image-container">
+          <img src={require('../../images/bookclub/3.png')} className="mobile-images" />
+          <img src={require('../../images/bookclub/4.png')} className="mobile-images" />
+        </div>
         <div>{project.description}</div>
       </div>
     </Layout>
